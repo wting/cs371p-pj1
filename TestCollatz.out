@@ -1,0 +1,52 @@
+g++ -ansi -pedantic -I/public/linux/include/boost-1_38 -lcppunit -ldl -Wall -DTEST main.c++ -o main.app
+/lusr/bin/valgrind main.app
+==23777== Memcheck, a memory error detector.
+==23777== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==23777== Using LibVEX rev 1878, a library for dynamic binary translation.
+==23777== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==23777== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
+==23777== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==23777== For more details, rerun with: -v
+==23777== 
+..F.F.F.F.
+
+
+!!!FAILURES!!!
+Test Results:
+Run:  6   Failures: 4   Errors: 0
+
+
+1) test: TestCollatz::test_eval_1 (F) line: 45 TestCollatz.h
+assertion failed
+- Expression: v == 20
+
+
+2) test: TestCollatz::test_eval_2 (F) line: 52 TestCollatz.h
+assertion failed
+- Expression: v == 125
+
+
+3) test: TestCollatz::test_eval_3 (F) line: 59 TestCollatz.h
+assertion failed
+- Expression: v == 89
+
+
+4) test: TestCollatz::test_eval_4 (F) line: 66 TestCollatz.h
+assertion failed
+- Expression: v == 174
+
+
+==23777== 
+==23777== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 21 from 1)
+==23777== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==23777== malloc/free: 345 allocs, 339 frees, 162,752 bytes allocated.
+==23777== For counts of detected errors, rerun with: -v
+==23777== searching for pointers to 6 not-freed blocks.
+==23777== checked 124,808 bytes.
+==23777== 
+==23777== LEAK SUMMARY:
+==23777==    definitely lost: 0 bytes in 0 blocks.
+==23777==      possibly lost: 0 bytes in 0 blocks.
+==23777==    still reachable: 122,880 bytes in 6 blocks.
+==23777==         suppressed: 0 bytes in 0 blocks.
+==23777== Rerun with --leak-check=full to see details of leaked memory.
