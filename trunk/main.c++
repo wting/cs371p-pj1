@@ -29,7 +29,7 @@ using namespace std;
 // -------
 // defines
 // -------
-#ifdef TEST
+/*#ifdef TEST
     #include "cppunit/TestSuite.h"      // TestSuite
     #include "cppunit/TextTestRunner.h" // TestRunner
     #include "TestCollatz.h"
@@ -37,7 +37,7 @@ using namespace std;
 
 #ifdef ONLINE_JUDGE
     #define NDEBUG
-#endif
+#endif*/
 
 // -------
 // globals
@@ -50,21 +50,23 @@ int v; // output
 // prototypes
 // -------
 void eval();
-void eval_aux(int);
+void eval_iterative(int);
+//void eval_recursive(int,int);
+int eval_recursive(int,int);
 void print(ostream &);
 bool read(istream &);
 
 int main () {
-    ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
+    //ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
 
-    #ifdef TEST
+    /*#ifdef TEST
         // ----------
         // unit tests
         // ----------
         CppUnit::TextTestRunner tr;
         tr.addTest(TestCollatz::suite());
         tr.run();
-    #else
+    #else*/
         // -------
         // program
         // -------
@@ -72,18 +74,43 @@ int main () {
             eval();
             print(cout);
 		}
-    #endif // TEST
+    //#endif // TEST
 
 	return 0;
 }
 
 void eval() {
 	v = 0;
-	for (int x=i; x<=j; ++x)
-		eval_aux(x);
+	int tmp;
+	for (int x=i; x<=j; ++x) {
+		tmp = eval_recursive(1,x);
+		//eval_iterative(x);
+		if (tmp > v)
+			v = tmp;
+	}
 }
 
-void eval_aux(int n) {
+int eval_recursive(int cycle,int n) {
+	if (n == 1)
+		return cycle;
+	if (n%2 == 1)
+		return eval_recursive(cycle+2,n + (n>>1) + 1);
+	else
+		return eval_recursive(cycle+1,n>>1);
+}
+
+/*void eval_recursive(int cycle, int n) {
+	if (n == 1) {
+		if (cycle > v)
+			v = cycle;
+	}
+	else if (n%2 == 1)
+		eval_recursive(cycle+2,n+(n>>1)+1);
+	else
+		eval_recursive(cycle+1,n>>1);
+}*/
+
+void eval_iterative(int n) {
 	int cycle = 1;
 	while (n != 1) {
 		if (n%2 == 1) {
@@ -98,14 +125,14 @@ void eval_aux(int n) {
 		v = cycle;
 }
 
-void print (std::ostream& out) {
+void print(std::ostream &out) {
 	/**
 	 * prints the values of i, j, and v
 	 */
     out << i << " " << j << " " << v << std::endl;
 }
 
-bool read (std::istream& in) {
+bool read(std::istream &in) {
 	/**
 	 * reads an int into i and j
 	 * @return true if that succeeds, false otherwise
