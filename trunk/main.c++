@@ -81,12 +81,13 @@ int main () {
 }
 
 int eval() {
-	if (i > j)
-		swap (i,j);
+	int x = i, y = j;
+	if (x > y)
+		swap (y,x);
 
 	int max = 0;
 	int tmp;
-	for (int n=i; n<=j; ++n) {
+	for (int n=x; n<=y; ++n) {
 		tmp = eval_recursive(1,n);
 		//tmp = eval_iterative(1,i);
 		if (tmp > max)
