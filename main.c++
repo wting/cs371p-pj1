@@ -29,7 +29,7 @@ using namespace std;
 // -------
 // defines
 // -------
-/*#ifdef TEST
+#ifdef TEST
     #include "cppunit/TestSuite.h"      // TestSuite
     #include "cppunit/TextTestRunner.h" // TestRunner
     #include "TestCollatz.h"
@@ -37,7 +37,7 @@ using namespace std;
 
 #ifdef ONLINE_JUDGE
     #define NDEBUG
-#endif*/
+#endif
 
 // -------
 // globals
@@ -51,22 +51,22 @@ int v; // output
 // -------
 void eval();
 void eval_iterative(int);
-//void eval_recursive(int,int);
-int eval_recursive(int,int);
+void eval_recursive(int,int);
 void print(ostream &);
 bool read(istream &);
+void swap(int &, int &);
 
 int main () {
-    //ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
+    ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
 
-    /*#ifdef TEST
+    #ifdef TEST
         // ----------
         // unit tests
         // ----------
         CppUnit::TextTestRunner tr;
         tr.addTest(TestCollatz::suite());
         tr.run();
-    #else*/
+    #else
         // -------
         // program
         // -------
@@ -74,32 +74,22 @@ int main () {
             eval();
             print(cout);
 		}
-    //#endif // TEST
+    #endif // TEST
 
 	return 0;
 }
 
 void eval() {
 	v = 0;
-	int tmp;
-	for (int x=i; x<=j; ++x) {
-		tmp = eval_recursive(1,x);
+	if (i > j)
+		swap(i,j);
+
+	for (int x=i; x<=j; ++x)
+		eval_recursive(1,x);
 		//eval_iterative(x);
-		if (tmp > v)
-			v = tmp;
-	}
 }
 
-int eval_recursive(int cycle,int n) {
-	if (n == 1)
-		return cycle;
-	if (n%2 == 1)
-		return eval_recursive(cycle+2,n + (n>>1) + 1);
-	else
-		return eval_recursive(cycle+1,n>>1);
-}
-
-/*void eval_recursive(int cycle, int n) {
+void eval_recursive(int cycle, int n) {
 	if (n == 1) {
 		if (cycle > v)
 			v = cycle;
@@ -108,7 +98,7 @@ int eval_recursive(int cycle,int n) {
 		eval_recursive(cycle+2,n+(n>>1)+1);
 	else
 		eval_recursive(cycle+1,n>>1);
-}*/
+}
 
 void eval_iterative(int n) {
 	int cycle = 1;
@@ -141,4 +131,10 @@ bool read(std::istream &in) {
         return false;
     in >> j;
     return true;
+}
+
+void swap (int &x, int &y) {
+	x ^= y;
+	y ^= x;
+	x ^= y;
 }
