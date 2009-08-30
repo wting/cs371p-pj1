@@ -46,7 +46,7 @@ int i; // input: don't change after reading
 int j; // input: don't change after reading
 int v; // output
 
-int eval(int,int);
+int eval();
 int eval_recursive(int, int);
 int eval_iterative(int, int);
 void print(ostream &);
@@ -67,15 +67,11 @@ int main () {
         // -------
         // program
         // -------
-		int x,y;
-
 		while (true) {
-			cin >> x >> y;
-			i = x;
-			j = y;
+			cin >> i >> j;
 			if (cin.eof())
 				break;
-			eval(x,y);
+			eval();
 			//printf("%d %d %d\n",x,y,eval(x,y));
 			print(cout);
 		}
@@ -84,13 +80,13 @@ int main () {
 	return 0;
 }
 
-int eval(int x, int y) {
-	if (x > y)
-		swap (x,y);
+int eval() {
+	if (i > j)
+		swap (i,j);
 
 	int max = 0;
 	int tmp;
-	for (int n=x; n<=y; ++n) {
+	for (int n=i; n<=j; ++n) {
 		tmp = eval_recursive(1,n);
 		//tmp = eval_iterative(1,i);
 		if (tmp > max)
