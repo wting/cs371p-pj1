@@ -46,12 +46,9 @@ int i; // input: don't change after reading
 int j; // input: don't change after reading
 int v; // output
 
-// -------
-// prototypes
-// -------
-void eval();
-void eval_iterative(int);
-void eval_recursive(int,int);
+int eval(int,int);
+int eval_recursive(int, int);
+int eval_iterative(int, int);
 void print(ostream &);
 bool read(istream &);
 void swap(int &, int &);
@@ -70,49 +67,58 @@ int main () {
         // -------
         // program
         // -------
-        while (read(cin)) {
-            eval();
-            print(cout);
+		int x,y;
+
+		while (true) {
+			cin >> x >> y;
+			i = x;
+			j = y;
+			if (cin.eof())
+				break;
+			eval(x,y);
+			//printf("%d %d %d\n",x,y,eval(x,y));
+			print(cout);
 		}
-    #endif // TEST
+	#endif
 
 	return 0;
 }
 
-void eval() {
-	v = 0;
-	if (i > j)
-		swap(i,j);
+int eval(int x, int y) {
+	if (x > y)
+		swap (x,y);
 
-	for (int x=i; x<=j; ++x)
-		eval_recursive(1,x);
-		//eval_iterative(x);
-}
-
-void eval_recursive(int cycle, int n) {
-	if (n == 1) {
-		if (cycle > v)
-			v = cycle;
+	int max = 0;
+	int tmp;
+	for (int n=x; n<=y; ++n) {
+		tmp = eval_recursive(1,n);
+		//tmp = eval_iterative(1,i);
+		if (tmp > max)
+			max = tmp;
 	}
-	else if (n%2 == 1)
-		eval_recursive(cycle+2,n+(n>>1)+1);
-	else
-		eval_recursive(cycle+1,n>>1);
+
+	v = max;
+	return max;
 }
 
-void eval_iterative(int n) {
-	int cycle = 1;
+int eval_recursive(int cycle,int n) {
+	if (n == 1)
+		return cycle;
+	if (n%2 == 1)
+		return eval_recursive(cycle+2,n + (n>>1) + 1);
+	else
+		return eval_recursive(cycle+1,n>>1);
+}
+
+int eval_iterative(int cycle,int n) {
 	while (n != 1) {
-		if (n%2 == 1) {
-			n = n+(n>>1)+1;
-			++cycle;
-		}
+		if (n%2 == 1)
+			n = 3*n+1;
 		else
-			n = n>>1;
+			n /= 2;
 		++cycle;
 	}
-	if (cycle > v)
-		v = cycle;
+	return cycle;
 }
 
 void print(std::ostream &out) {
