@@ -67,12 +67,8 @@ int main () {
         // -------
         // program
         // -------
-		while (true) {
-			cin >> i >> j;
-			if (cin.eof())
-				break;
+		while (read(cin)) {
 			eval();
-			//printf("%d %d %d\n",x,y,eval(x,y));
 			print(cout);
 		}
 	#endif
