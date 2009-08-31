@@ -110,7 +110,7 @@ int eval_recursive(int cycle,int n) {
 int eval_iterative(int cycle,int n) {
 	while (n != 1) {
 		if (n%2 == 1) {
-			n = n + (n>>1) + 1;
+			n = n + (n >> 1) + 1;
 			cycle += 2;
 		}
 		else {
