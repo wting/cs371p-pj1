@@ -88,8 +88,8 @@ int eval() {
 	int max = 0;
 	int tmp;
 	for (int n=x; n<=y; ++n) {
-		tmp = eval_recursive(1,n);
-		//tmp = eval_iterative(1,i);
+		//tmp = eval_recursive(1,n);
+		tmp = eval_iterative(1,n);
 		if (tmp > max)
 			max = tmp;
 	}
@@ -109,11 +109,14 @@ int eval_recursive(int cycle,int n) {
 
 int eval_iterative(int cycle,int n) {
 	while (n != 1) {
-		if (n%2 == 1)
-			n = 3*n+1;
-		else
+		if (n%2 == 1) {
+			n = n + (n>>1) + 1;
+			cycle += 2;
+		}
+		else {
 			n /= 2;
-		++cycle;
+			++cycle;
+		}
 	}
 	return cycle;
 }
