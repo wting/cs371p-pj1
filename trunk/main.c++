@@ -45,10 +45,15 @@ using namespace std;
 int i; // input: don't change after reading
 int j; // input: don't change after reading
 int v; // output
+bool lazy_cache = true;
+unsigned long int lazy[1000000] = {0};
 
+// ----------
+// prototypes
+// ----------
 int eval();
-int eval_recursive(int, int);
-int eval_iterative(int, int);
+int eval_iterative(int, unsigned long int);
+int eval_recursive(int, unsigned long int);
 void print(ostream &);
 bool read(istream &);
 void swap(int &, int &);
@@ -81,11 +86,10 @@ int eval() {
 	if (x > y)
 		swap (y,x);
 
-	int max = 0;
-	int tmp;
+	int max = 0, tmp = 0;
 	for (int n=x; n<=y; ++n) {
-		//tmp = eval_recursive(1,n);
-		tmp = eval_iterative(1,n);
+		tmp = eval_iterative(0,n);
+
 		if (tmp > max)
 			max = tmp;
 	}
@@ -94,7 +98,41 @@ int eval() {
 	return max;
 }
 
-int eval_recursive(int cycle,int n) {
+int eval_iterative(int cycle, unsigned long int n) {
+	int cycle_path[1000] = {0};
+	int path_loc = 0;
+
+	while (n != 1) {
+		if (n < 1000000 && lazy[n] != 0) {
+			cycle += lazy[n] - 1;
+			break;
+		}
+
+		cycle_path[path_loc++] = n;
+		if (n%2 == 1) {
+			n = 3 * n + 1;
+			cycle_path[path_loc] = n;
+		}
+		else
+			n /= 2;
+		++cycle;
+	}
+	++cycle;
+
+	path_loc = 0;
+	int c = 0;
+	while (path_loc <= 1000) {
+		c = cycle_path[path_loc++];
+		if (c == 0 || c > 1000000)
+			break;
+		int cycle_count = cycle - (path_loc - 1);
+		lazy[c] = cycle_count;
+	}
+
+	return cycle;
+}
+
+int eval_recursive(int cycle, unsigned long int n) {
 	if (n == 1)
 		return cycle;
 	if (n%2 == 1)
@@ -103,19 +141,6 @@ int eval_recursive(int cycle,int n) {
 		return eval_recursive(cycle+1,n>>1);
 }
 
-int eval_iterative(int cycle,int n) {
-	while (n != 1) {
-		if (n%2 == 1) {
-			n = n + (n >> 1) + 1;
-			cycle += 2;
-		}
-		else {
-			n /= 2;
-			++cycle;
-		}
-	}
-	return cycle;
-}
 
 void print(std::ostream &out) {
 	/**
