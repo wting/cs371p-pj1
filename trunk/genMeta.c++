@@ -52,7 +52,7 @@ int curIndex = 0;
 
 int eval();
 int eval_recursive(int, int);
-int eval_iterative(int, int);
+int eval_iterative(int, unsigned int);
 void print(ostream &);
 bool read(istream &);
 void swap(int &, int &);
@@ -75,19 +75,26 @@ int main () {
         j = sliceSize;
         
         while (j <= 1000000) {
-          cout << i << " " << j << endl;
+          //cout << i << " " << j << endl;
           eval();
-          cout << v << endl;
+          //cout << v << endl;
           range[curIndex++] = v;
           v = 0;
           i += sliceSize;
           j += sliceSize;
         }
 
-        int n;
+        
+        //build the array
+        unsigned long n;
+        cout << "int meta = {";
         for (n = 0; n < 1000; n++) {
-          cout << range[n] << " ";
+          cout << range[n];
+          if ( n != 999) {
+            cout << ", ";
+          }
         }
+        cout << "};" << endl;
 
 
         /*
@@ -106,15 +113,15 @@ int main () {
 }
 
 int eval() {
-	int x = i, y = j;
+	unsigned long x = i, y = j;
 	if (x > y)
 		swap (y,x);
 
 	int max = 0;
 	int tmp;
-	for (int n=x; n<=y; ++n) {
-          tmp = eval_recursive(1,n);
-          //tmp = eval_iterative(1,n);
+	for (unsigned long n=x; n<=y; ++n) {
+          //tmp = eval_recursive(1,n);
+          tmp = eval_iterative(1,n);
 		if (tmp > max)
 			max = tmp;
 	}
@@ -133,10 +140,20 @@ int eval_recursive(int cycle,int n) {
 		return eval_recursive(cycle+1,n>>1);
 }
 
-int eval_iterative(int cycle,int n) {
+int eval_iterative(int cycle,unsigned int n) {
 
   //cout << "n: " << n << endl;
+  /*
+  if (n >= 113001) {
+    cout << "n: " << n << endl;
+  }
+  */
 	while (n != 1) {
+          /*
+          if (n < 0) {
+            cout << "overflow" << endl;
+          }
+          */
 		if (n%2 == 1)
 			n = 3*n+1;
 		else
