@@ -46,8 +46,8 @@ int i; // input: don't change after reading
 int j; // input: don't change after reading
 int v; // output
 
-int sliceSize = 100;
-int range[7000];
+int sliceSize = 1000;
+int range[1000];
 int curIndex = 0;
 
 int eval();
@@ -87,10 +87,10 @@ int main () {
         
         //build the array
         unsigned long n;
-        cout << "int meta[7000] = {";
-        for (n = 0; n < 7000; n++) {
+        cout << "int meta = {";
+        for (n = 0; n < 1000; n++) {
           cout << range[n];
-          if ( n != 6999) {
+          if ( n != 999) {
             cout << ", ";
           }
         }
