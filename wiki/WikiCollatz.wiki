@@ -8,7 +8,7 @@ This program is designed to solve the [http://uva.onlinejudge.org/index.php?opti
 = Details =
 
 This implementation solves the problem in .132 seconds, resulting in a top 8% ranking.  This is achieved via the use of:
-  * a meta cache, composed of the maximum cycle lengths for 1000-sized ranges.
+  * a meta cache, composed of the maximum cycle lengths over the range 1 to 1000000 in 1000-sized slices.
   * a lazy cache, which retains the cycle length for any number computed, including intermediary values.
 
 Add your content here.  Format your content with:
