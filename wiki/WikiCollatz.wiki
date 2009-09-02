@@ -1,0 +1,17 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+This program is designed to solve the [http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=3&page=show_problem&problem=36 Collatz Conjecture] puzzle at UVA.
+
+
+= Details =
+
+This implementation solves the problem in .132 seconds, resulting in a top 8% ranking.  This is achieved via the use of:
+  * a meta cache, composed of the maximum cycle lengths for 1000-sized ranges.
+  * a lazy cache, which retains the cycle length for any number computed, including intermediary values.
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
