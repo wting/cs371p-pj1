@@ -32,7 +32,7 @@ using namespace std;
 #ifdef TEST
     #include "cppunit/TestSuite.h"      // TestSuite
     #include "cppunit/TextTestRunner.h" // TestRunner
-    #include "TestCollatz.h"
+    //#include "TestCollatz.h"
 #endif
 
 #ifdef ONLINE_JUDGE
@@ -58,6 +58,14 @@ int eval_iterative(int, unsigned long int);
 void print(ostream &);
 bool read(istream &);
 void swap(int &, int &);
+
+// -----
+// tests
+// -----
+
+#ifdef TEST
+    #include "TestCollatz.h"
+#endif // TEST
 
 int main () {
     ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
