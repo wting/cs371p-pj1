@@ -7,6 +7,7 @@
 #ifndef TestCollatz_h
 #define TestCollatz_h
 
+
 // --------
 // includes
 // --------
@@ -65,6 +66,46 @@ struct TestCollatz : CppUnit::TestFixture {
         eval();
         CPPUNIT_ASSERT(v == 174);}
 
+    // -------------------------
+    // Added by Ting and Raleigh
+    // -------------------------
+  
+    void test_eval_5 () {
+        i = 33333;
+        j = 44444;
+        v =     0;
+        eval();
+        CPPUNIT_ASSERT(v == 324);}
+
+    void test_eval_6 () {
+        i = 11111;
+        j = 22222;
+        v =     0;
+        eval();
+        CPPUNIT_ASSERT(v == 279);}
+
+    void test_eval_7 () {
+        i = 67899;
+        j = 60656;
+        v =     0;
+        eval();
+        CPPUNIT_ASSERT(v == 335);}
+
+    void test_eval_8 () {
+        i = 45;
+        j = 43;
+        v =  0;
+        eval();
+        CPPUNIT_ASSERT(v == 30);}
+
+    void test_eval_9 () {
+        i = 3130;
+        j =  193;
+        v =    0;
+        eval();
+        CPPUNIT_ASSERT(v == 217);}
+  
+
     // -----
     // print
     // -----
@@ -87,6 +128,11 @@ struct TestCollatz : CppUnit::TestFixture {
     CPPUNIT_TEST(test_eval_2);
     CPPUNIT_TEST(test_eval_3);
     CPPUNIT_TEST(test_eval_4);
+    CPPUNIT_TEST(test_eval_5);
+    CPPUNIT_TEST(test_eval_6);
+    CPPUNIT_TEST(test_eval_7);
+    CPPUNIT_TEST(test_eval_8);
+    CPPUNIT_TEST(test_eval_9);
     CPPUNIT_TEST(test_print);
     CPPUNIT_TEST_SUITE_END();};
 
