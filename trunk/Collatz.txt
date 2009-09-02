@@ -14,7 +14,7 @@ http://code.google.com/p/cs371p-pj1/
 UT Blog Entry
 -------------
 
-<URL>
+http://blogs.utexas.edu/hpt/2009/09/02/project-1-collatz/
 
 --
 Me
