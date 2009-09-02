@@ -57,7 +57,6 @@ unsigned long int lazy[1000000] = {0};
 // ----------
 int eval();
 int eval_iterative(int, unsigned long int);
-int eval_recursive(int, unsigned long int);
 void print(ostream &);
 bool read(istream &);
 void swap(int &, int &);
@@ -140,16 +139,6 @@ int eval_iterative(int cycle, unsigned long int n) {
 
 	return cycle;
 }
-
-int eval_recursive(int cycle, unsigned long int n) {
-	if (n == 1)
-		return cycle;
-	if (n%2 == 1)
-		return eval_recursive(cycle+2,n + (n>>1) + 1);
-	else
-		return eval_recursive(cycle+1,n>>1);
-}
-
 
 void print(std::ostream &out) {
 	/**
