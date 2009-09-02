@@ -93,15 +93,17 @@ void eval() {
 
 	int max = 0, tmp = 0;
 	for (int n=x; n<=y; ++n) {
+          //check the meta cache first
           if (n % 1000 == 1 && y - n >= 1000) {
-            tmp = meta[n/1000];
-            n += 1000;
+                tmp = meta[n/1000];
+                n += 1000;
           } else {
+            //perform the 3n + 1 computation
 		tmp = eval_iterative(0,n);
           }
 
-		if (tmp > max)
-			max = tmp;
+	  if (tmp > max)
+                max = tmp;
 	}
 
 	v = max;
