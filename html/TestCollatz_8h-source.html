@@ -50,81 +50,81 @@
 <a name="l00029"></a>00029 
 <a name="l00030"></a><a class="code" href="structTestCollatz.html#ed249753cb58d6839d4418ebe4b6febe">00030</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#ed249753cb58d6839d4418ebe4b6febe">test_read</a> () {
 <a name="l00031"></a>00031         std::istringstream in(<span class="stringliteral">"1 10\n"</span>);
-<a name="l00032"></a>00032         <span class="keyword">const</span> <span class="keywordtype">bool</span> b = <a class="code" href="genMeta_8c_09_09.html#ee3f29577888a5372508ce070c5dbbc8">read</a>(in);
+<a name="l00032"></a>00032         <span class="keyword">const</span> <span class="keywordtype">bool</span> b = <a class="code" href="main_8c_09_09.html#2351b224ac9d4b49907790a4de468f19">read</a>(in);
 <a name="l00033"></a>00033         CPPUNIT_ASSERT(b == <span class="keyword">true</span>);
-<a name="l00034"></a>00034         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> ==    1);
-<a name="l00035"></a>00035         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> ==   10);}
+<a name="l00034"></a>00034         CPPUNIT_ASSERT(i ==    1);
+<a name="l00035"></a>00035         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> ==   10);}
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037     <span class="comment">// ----</span>
 <a name="l00038"></a>00038     <span class="comment">// eval</span>
 <a name="l00039"></a>00039     <span class="comment">// ----</span>
 <a name="l00040"></a>00040 
 <a name="l00041"></a><a class="code" href="structTestCollatz.html#6cbed0c21b9629f8d976aefd3227738b">00041</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#6cbed0c21b9629f8d976aefd3227738b">test_eval_1</a> () {
-<a name="l00042"></a>00042         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> =  1;
-<a name="l00043"></a>00043         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> = 10;
-<a name="l00044"></a>00044         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> =  0;
-<a name="l00045"></a>00045         <a class="code" href="genMeta_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
-<a name="l00046"></a>00046         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> == 20);}
+<a name="l00042"></a>00042         i =  1;
+<a name="l00043"></a>00043         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 10;
+<a name="l00044"></a>00044         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> =  0;
+<a name="l00045"></a>00045         <a class="code" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
+<a name="l00046"></a>00046         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> == 20);}
 <a name="l00047"></a>00047 
 <a name="l00048"></a><a class="code" href="structTestCollatz.html#f4a13ed69e43facf22351fbce1b2151d">00048</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#f4a13ed69e43facf22351fbce1b2151d">test_eval_2</a> () {
-<a name="l00049"></a>00049         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> = 100;
-<a name="l00050"></a>00050         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> = 200;
-<a name="l00051"></a>00051         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> =   0;
-<a name="l00052"></a>00052         <a class="code" href="genMeta_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
-<a name="l00053"></a>00053         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> == 125);}
+<a name="l00049"></a>00049         i = 100;
+<a name="l00050"></a>00050         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 200;
+<a name="l00051"></a>00051         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> =   0;
+<a name="l00052"></a>00052         <a class="code" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
+<a name="l00053"></a>00053         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> == 125);}
 <a name="l00054"></a>00054 
 <a name="l00055"></a><a class="code" href="structTestCollatz.html#81bdbc92410e8a5ba713a5584983f5fe">00055</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#81bdbc92410e8a5ba713a5584983f5fe">test_eval_3</a> () {
-<a name="l00056"></a>00056         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> = 201;
-<a name="l00057"></a>00057         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> = 210;
-<a name="l00058"></a>00058         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> =   0;
-<a name="l00059"></a>00059         <a class="code" href="genMeta_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
-<a name="l00060"></a>00060         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> == 89);}
+<a name="l00056"></a>00056         i = 201;
+<a name="l00057"></a>00057         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 210;
+<a name="l00058"></a>00058         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> =   0;
+<a name="l00059"></a>00059         <a class="code" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
+<a name="l00060"></a>00060         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> == 89);}
 <a name="l00061"></a>00061 
 <a name="l00062"></a><a class="code" href="structTestCollatz.html#dcaeeabf4b06da3ec214f982b5b79ba3">00062</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#dcaeeabf4b06da3ec214f982b5b79ba3">test_eval_4</a> () {
-<a name="l00063"></a>00063         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> =  900;
-<a name="l00064"></a>00064         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> = 1000;
-<a name="l00065"></a>00065         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> =    0;
-<a name="l00066"></a>00066         <a class="code" href="genMeta_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
-<a name="l00067"></a>00067         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> == 174);}
+<a name="l00063"></a>00063         i =  900;
+<a name="l00064"></a>00064         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 1000;
+<a name="l00065"></a>00065         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> =    0;
+<a name="l00066"></a>00066         <a class="code" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
+<a name="l00067"></a>00067         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> == 174);}
 <a name="l00068"></a>00068 
 <a name="l00069"></a>00069     <span class="comment">// -------------------------</span>
 <a name="l00070"></a>00070     <span class="comment">// Added by Ting and Raleigh</span>
 <a name="l00071"></a>00071     <span class="comment">// -------------------------</span>
 <a name="l00072"></a>00072   
 <a name="l00073"></a><a class="code" href="structTestCollatz.html#0413b43c482db34f2b976a9627cf58d0">00073</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#0413b43c482db34f2b976a9627cf58d0">test_eval_5</a> () {
-<a name="l00074"></a>00074         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> = 33333;
-<a name="l00075"></a>00075         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> = 44444;
-<a name="l00076"></a>00076         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> =     0;
-<a name="l00077"></a>00077         <a class="code" href="genMeta_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
-<a name="l00078"></a>00078         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> == 324);}
+<a name="l00074"></a>00074         i = 33333;
+<a name="l00075"></a>00075         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 44444;
+<a name="l00076"></a>00076         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> =     0;
+<a name="l00077"></a>00077         <a class="code" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
+<a name="l00078"></a>00078         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> == 324);}
 <a name="l00079"></a>00079 
 <a name="l00080"></a><a class="code" href="structTestCollatz.html#f1f812020118815b493299db212199e6">00080</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#f1f812020118815b493299db212199e6">test_eval_6</a> () {
-<a name="l00081"></a>00081         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> = 11111;
-<a name="l00082"></a>00082         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> = 22222;
-<a name="l00083"></a>00083         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> =     0;
-<a name="l00084"></a>00084         <a class="code" href="genMeta_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
-<a name="l00085"></a>00085         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> == 279);}
+<a name="l00081"></a>00081         i = 11111;
+<a name="l00082"></a>00082         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 22222;
+<a name="l00083"></a>00083         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> =     0;
+<a name="l00084"></a>00084         <a class="code" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
+<a name="l00085"></a>00085         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> == 279);}
 <a name="l00086"></a>00086 
 <a name="l00087"></a><a class="code" href="structTestCollatz.html#2deed6a3f646c6925ed83e7f83c19d2d">00087</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#2deed6a3f646c6925ed83e7f83c19d2d">test_eval_7</a> () {
-<a name="l00088"></a>00088         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> = 67899;
-<a name="l00089"></a>00089         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> = 60656;
-<a name="l00090"></a>00090         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> =     0;
-<a name="l00091"></a>00091         <a class="code" href="genMeta_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
-<a name="l00092"></a>00092         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> == 335);}
+<a name="l00088"></a>00088         i = 67899;
+<a name="l00089"></a>00089         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 60656;
+<a name="l00090"></a>00090         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> =     0;
+<a name="l00091"></a>00091         <a class="code" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
+<a name="l00092"></a>00092         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> == 335);}
 <a name="l00093"></a>00093 
 <a name="l00094"></a><a class="code" href="structTestCollatz.html#45aa596285dd426f08d1b89adf664000">00094</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#45aa596285dd426f08d1b89adf664000">test_eval_8</a> () {
-<a name="l00095"></a>00095         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> = 45;
-<a name="l00096"></a>00096         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> = 43;
-<a name="l00097"></a>00097         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> =  0;
-<a name="l00098"></a>00098         <a class="code" href="genMeta_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
-<a name="l00099"></a>00099         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> == 30);}
+<a name="l00095"></a>00095         i = 45;
+<a name="l00096"></a>00096         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 43;
+<a name="l00097"></a>00097         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> =  0;
+<a name="l00098"></a>00098         <a class="code" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
+<a name="l00099"></a>00099         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> == 30);}
 <a name="l00100"></a>00100 
 <a name="l00101"></a><a class="code" href="structTestCollatz.html#893e0ab801aa9927cfd6171126db6aaf">00101</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#893e0ab801aa9927cfd6171126db6aaf">test_eval_9</a> () {
-<a name="l00102"></a>00102         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> = 3130;
-<a name="l00103"></a>00103         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> =  193;
-<a name="l00104"></a>00104         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> =    0;
-<a name="l00105"></a>00105         <a class="code" href="genMeta_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
-<a name="l00106"></a>00106         CPPUNIT_ASSERT(<a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> == 217);}
+<a name="l00102"></a>00102         i = 3130;
+<a name="l00103"></a>00103         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> =  193;
+<a name="l00104"></a>00104         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> =    0;
+<a name="l00105"></a>00105         <a class="code" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a>();
+<a name="l00106"></a>00106         CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> == 217);}
 <a name="l00107"></a>00107   
 <a name="l00108"></a>00108 
 <a name="l00109"></a>00109     <span class="comment">// -----</span>
@@ -132,34 +132,44 @@
 <a name="l00111"></a>00111     <span class="comment">// -----</span>
 <a name="l00112"></a>00112 
 <a name="l00113"></a><a class="code" href="structTestCollatz.html#ce68f32bbe93b937ce916a282277fb10">00113</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#ce68f32bbe93b937ce916a282277fb10">test_print</a> () {
-<a name="l00114"></a>00114         <a class="code" href="genMeta_8c_09_09.html#cb559820d9ca11295b4500f179ef6392">i</a> =  1;
-<a name="l00115"></a>00115         <a class="code" href="genMeta_8c_09_09.html#37d972ae0b47b9099e30983131d31916">j</a> = 10;
-<a name="l00116"></a>00116         <a class="code" href="genMeta_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c">v</a> = 20;
+<a name="l00114"></a>00114         i =  1;
+<a name="l00115"></a>00115         <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 10;
+<a name="l00116"></a>00116         <a class="code" href="main_8c_09_09.html#c8859e8c1ce357c4c8b37bbb1936ba1c" title="max cycle count between i and j ranges">v</a> = 20;
 <a name="l00117"></a>00117         std::ostringstream out;
-<a name="l00118"></a>00118         <a class="code" href="genMeta_8c_09_09.html#ff375352f61bfc53bffe70a7febdf836">print</a>(out);
+<a name="l00118"></a>00118         <a class="code" href="main_8c_09_09.html#763d1d9cd987aaff0ad799938f0babe7">print</a>(out);
 <a name="l00119"></a>00119         CPPUNIT_ASSERT(out.str() == <span class="stringliteral">"1 10 20\n"</span>);}
 <a name="l00120"></a>00120 
-<a name="l00121"></a>00121     <span class="comment">// -----</span>
-<a name="l00122"></a>00122     <span class="comment">// suite</span>
-<a name="l00123"></a>00123     <span class="comment">// -----</span>
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125     <a class="code" href="structTestCollatz.html#c4ec85f811e9e88fa6af5a3220f6b7fe">CPPUNIT_TEST_SUITE</a>(<a class="code" href="structTestCollatz.html">TestCollatz</a>);
-<a name="l00126"></a>00126     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#ed249753cb58d6839d4418ebe4b6febe">test_read</a>);
-<a name="l00127"></a>00127     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#6cbed0c21b9629f8d976aefd3227738b">test_eval_1</a>);
-<a name="l00128"></a>00128     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#f4a13ed69e43facf22351fbce1b2151d">test_eval_2</a>);
-<a name="l00129"></a>00129     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#81bdbc92410e8a5ba713a5584983f5fe">test_eval_3</a>);
-<a name="l00130"></a>00130     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#dcaeeabf4b06da3ec214f982b5b79ba3">test_eval_4</a>);
-<a name="l00131"></a>00131     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#0413b43c482db34f2b976a9627cf58d0">test_eval_5</a>);
-<a name="l00132"></a>00132     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#f1f812020118815b493299db212199e6">test_eval_6</a>);
-<a name="l00133"></a>00133     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#2deed6a3f646c6925ed83e7f83c19d2d">test_eval_7</a>);
-<a name="l00134"></a>00134     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#45aa596285dd426f08d1b89adf664000">test_eval_8</a>);
-<a name="l00135"></a>00135     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#893e0ab801aa9927cfd6171126db6aaf">test_eval_9</a>);
-<a name="l00136"></a>00136     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#ce68f32bbe93b937ce916a282277fb10">test_print</a>);
-<a name="l00137"></a>00137     <a class="code" href="structTestCollatz.html#0db0ebca89d8127a0b79e5133134c3af">CPPUNIT_TEST_SUITE_END</a>();};
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139 <span class="preprocessor">#endif // TestCollatz_h</span>
+<a name="l00121"></a><a class="code" href="structTestCollatz.html#d7a0d59b83107ab179e1cf78eddc304c">00121</a>     <span class="keywordtype">void</span> <a class="code" href="structTestCollatz.html#d7a0d59b83107ab179e1cf78eddc304c">test_swap</a>() {
+<a name="l00122"></a>00122       i = 4;
+<a name="l00123"></a>00123       <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> = 5;
+<a name="l00124"></a>00124       <a class="code" href="main_8c_09_09.html#802796114a955c30d92a3ed5d5f08dd7">swap</a>(i, <a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a>);
+<a name="l00125"></a>00125       CPPUNIT_ASSERT(i == 5);
+<a name="l00126"></a>00126       CPPUNIT_ASSERT(<a class="code" href="main_8c_09_09.html#37d972ae0b47b9099e30983131d31916" title="second input number">j</a> == 4);
+<a name="l00127"></a>00127       
+<a name="l00128"></a>00128     }
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130     <span class="comment">// -----</span>
+<a name="l00131"></a>00131     <span class="comment">// suite</span>
+<a name="l00132"></a>00132     <span class="comment">// -----</span>
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134     <a class="code" href="structTestCollatz.html#c4ec85f811e9e88fa6af5a3220f6b7fe">CPPUNIT_TEST_SUITE</a>(<a class="code" href="structTestCollatz.html">TestCollatz</a>);
+<a name="l00135"></a>00135     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#ed249753cb58d6839d4418ebe4b6febe">test_read</a>);
+<a name="l00136"></a>00136     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#6cbed0c21b9629f8d976aefd3227738b">test_eval_1</a>);
+<a name="l00137"></a>00137     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#f4a13ed69e43facf22351fbce1b2151d">test_eval_2</a>);
+<a name="l00138"></a>00138     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#81bdbc92410e8a5ba713a5584983f5fe">test_eval_3</a>);
+<a name="l00139"></a>00139     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#dcaeeabf4b06da3ec214f982b5b79ba3">test_eval_4</a>);
+<a name="l00140"></a>00140     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#0413b43c482db34f2b976a9627cf58d0">test_eval_5</a>);
+<a name="l00141"></a>00141     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#f1f812020118815b493299db212199e6">test_eval_6</a>);
+<a name="l00142"></a>00142     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#2deed6a3f646c6925ed83e7f83c19d2d">test_eval_7</a>);
+<a name="l00143"></a>00143     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#45aa596285dd426f08d1b89adf664000">test_eval_8</a>);
+<a name="l00144"></a>00144     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#893e0ab801aa9927cfd6171126db6aaf">test_eval_9</a>);
+<a name="l00145"></a>00145     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#ce68f32bbe93b937ce916a282277fb10">test_print</a>);
+<a name="l00146"></a>00146     <a class="code" href="structTestCollatz.html#3061012563bf19268d148200f1bb055d">CPPUNIT_TEST</a>(<a class="code" href="structTestCollatz.html#d7a0d59b83107ab179e1cf78eddc304c">test_swap</a>);
+<a name="l00147"></a>00147     <a class="code" href="structTestCollatz.html#0db0ebca89d8127a0b79e5133134c3af">CPPUNIT_TEST_SUITE_END</a>();};
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 <span class="preprocessor">#endif // TestCollatz_h</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Sep 2 17:34:50 2009 by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Sep 2 17:37:50 2009 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
