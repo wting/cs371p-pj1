@@ -32,6 +32,12 @@ Name: Raleigh Schickel
 EID: rs8923
 E-mail address: raleigh.schickel@mail.utexas.edu
 
+----------------------
+Miscellaneous Comments
+----------------------
+
+If the UVA run time is different than the time stated in our blog entries, it's because assertions slow down the program and were commented out for submission.
+
 -----------------------
 My Rating of My Partner
 -----------------------
