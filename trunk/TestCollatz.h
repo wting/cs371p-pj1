@@ -118,6 +118,15 @@ struct TestCollatz : CppUnit::TestFixture {
         print(out);
         CPPUNIT_ASSERT(out.str() == "1 10 20\n");}
 
+    void test_swap() {
+      i = 4;
+      j = 5;
+      swap(i, j);
+      CPPUNIT_ASSERT(i == 5);
+      CPPUNIT_ASSERT(j == 4);
+      
+    }
+
     // -----
     // suite
     // -----
@@ -134,6 +143,7 @@ struct TestCollatz : CppUnit::TestFixture {
     CPPUNIT_TEST(test_eval_8);
     CPPUNIT_TEST(test_eval_9);
     CPPUNIT_TEST(test_print);
+    CPPUNIT_TEST(test_swap);
     CPPUNIT_TEST_SUITE_END();};
 
 #endif // TestCollatz_h
