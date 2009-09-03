@@ -115,8 +115,8 @@ void eval() {
 int eval_iterative(int cycle, unsigned long int n) {
 	/**
 	calculates the 3n+1 cycle count of a number iteratively
-	@param[cycle] cycle counter, should be passed in as 0 for 1st number
-	@param[n] current value
+	@param [cycle] cycle counter, should be passed in as 0 for 1st number
+	@param [n] current value
 	@return cycle count
 	*/
 	int cycle_path[1000] = {0};
@@ -157,8 +157,8 @@ int eval_iterative(int cycle, unsigned long int n) {
 int eval_recursive(int cycle, unsigned long int n) {
 	/**
 	calculates the 3n+1 cycle count of a number recursively, included as a test function for iteration + lazy cache
-	@param[cycle] cycle counter, should be passed in as 0 for 1st number
-	@param[n] current value
+	@param [cycle] cycle counter, should be passed in as 0 for 1st number
+	@param [n] current value
 	@return cycle count
 	*/
 	if (n == 1)
@@ -172,7 +172,7 @@ int eval_recursive(int cycle, unsigned long int n) {
 void print(std::ostream &out) {
 	/**
 	prints the values of i, j, and v
-	@param[in] out ostream to display results to
+	@param [in] out ostream to display results to
 	*/
     out << i << " " << j << " " << v << std::endl;
 }
@@ -180,7 +180,7 @@ void print(std::ostream &out) {
 bool read(std::istream &in) {
 	/**
 	reads an int into i and j
-	@param[in] in istream to read in range values
+	@param [in] in istream to read in range values
 	@return true if that succeeds, false otherwise
 	*/
     if (!(in >> i))
@@ -192,8 +192,8 @@ bool read(std::istream &in) {
 void swap (int &x, int &y) {
 	/**
 	swaps two ints with each other
-	@param[in] x integer to swap
-	@param[in] y integer to swap
+	@param [in] x integer to swap
+	@param [in] y integer to swap
 	*/
 	x ^= y;
 	y ^= x;
