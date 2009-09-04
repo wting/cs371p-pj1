@@ -99,7 +99,9 @@ void eval() {
 	int x = i, y = j;
 	if (x > y)
 		swap (y,x);
-	//assert(x <= y);
+	#if !defined ONLINE_JUDGE
+		assert(x <= y);
+	#endif
 
 	int max = 0, tmp = 0;
 	for (int n=x; n<=y; ++n) {
@@ -111,7 +113,9 @@ void eval() {
 			///perform 3n+1 computation
 			tmp = eval_iterative(0,n);
 			//printf("n = %d\titer = %d\trecurs = %d\n",n,tmp,eval_recursive(1,n));
-			//assert(tmp == eval_recursive(1,n));
+			#if !defined ONLINE_JUDGE
+				assert(tmp == eval_recursive(1,n));
+			#endif
 		}
 
 	  if (tmp > max)
