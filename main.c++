@@ -101,11 +101,14 @@ void eval() {
 
 	int max = 0, tmp = 0;
 	for (int n=x; n<=y; ++n) {
-			if (n < 100000 && eager[n] != 0)
-				tmp = eager[n];
-			else
-				tmp = gen_iter(n);
-
+		///check meta-cache
+		if (n % 1000 == 1 && y - n >= 1000) {
+			tmp = meta[n/1000];
+			n += 1000;
+		} else {
+		///perform 3n+1 computation
+			tmp = eval_iterative(0,n);
+		}
 			#ifndef ONLINE_JUDGE
 				int r = gen_recurs(1,n);
 				if (tmp == r); /// tmp != r condition fails to ever work
