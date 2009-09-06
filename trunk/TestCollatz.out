@@ -1,29 +1,28 @@
-
-==10149== Memcheck, a memory error detector.
-==10149== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
-==10149== Using LibVEX rev 1878, a library for dynamic binary translation.
-==10149== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
-==10149== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
-==10149== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
-==10149== For more details, rerun with: -v
-==10149== 
+==31689== Memcheck, a memory error detector.
+==31689== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==31689== Using LibVEX rev 1884, a library for dynamic binary translation.
+==31689== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==31689== Using valgrind-3.4.1-Debian, a dynamic binary instrumentation framework.
+==31689== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==31689== For more details, rerun with: -v
+==31689== 
 ............
 
 
 OK (12 tests)
 
 
-==10149== 
-==10149== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 21 from 1)
-==10149== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
-==10149== malloc/free: 324 allocs, 318 frees, 159,629 bytes allocated.
-==10149== For counts of detected errors, rerun with: -v
-==10149== searching for pointers to 6 not-freed blocks.
-==10149== checked 4,126,716 bytes.
-==10149== 
-==10149== LEAK SUMMARY:
-==10149==    definitely lost: 0 bytes in 0 blocks.
-==10149==      possibly lost: 0 bytes in 0 blocks.
-==10149==    still reachable: 122,880 bytes in 6 blocks.
-==10149==         suppressed: 0 bytes in 0 blocks.
-==10149== Rerun with --leak-check=full to see details of leaked memory.
+==31689== 
+==31689== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 21 from 1)
+==31689== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==31689== malloc/free: 324 allocs, 318 frees, 159,676 bytes allocated.
+==31689== For counts of detected errors, rerun with: -v
+==31689== searching for pointers to 6 not-freed blocks.
+==31689== checked 4,107,564 bytes.
+==31689== 
+==31689== LEAK SUMMARY:
+==31689==    definitely lost: 0 bytes in 0 blocks.
+==31689==      possibly lost: 0 bytes in 0 blocks.
+==31689==    still reachable: 122,880 bytes in 6 blocks.
+==31689==         suppressed: 0 bytes in 0 blocks.
+==31689== Rerun with --leak-check=full to see details of leaked memory.
