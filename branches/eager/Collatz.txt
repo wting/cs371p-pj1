@@ -1,0 +1,78 @@
+-----
+Title
+-----
+
+CS371p: Project #1: Collatz
+
+--------------
+Google Project
+--------------
+
+http://code.google.com/p/cs371p-pj1/
+
+-------------
+UT Blog Entry
+-------------
+
+http://blogs.utexas.edu/hpt/2009/09/02/project-1-collatz/
+
+--
+Me
+--
+
+Name: HanPing Ting
+EID: hpt
+E-mail address: ancientpc @ mail.utexas.edu
+
+-------
+Partner
+-------
+
+Name: Raleigh Schickel
+EID: rs8923
+E-mail address: raleigh.schickel@mail.utexas.edu
+
+----------------------
+Miscellaneous Comments
+----------------------
+
+If the UVA run time is different than the time stated in our blog entries, it's because assertions slow down the program and were commented out for submission.
+
+-----------------------
+My Rating of My Partner
+-----------------------
+
+<rating>
+
+-------
+Ratings
+-------
+
+Excellent: Consistently went above and beyond - tutored partner, carried
+more than his/her fair share of the load.
+
+Very Good: Consistently did what he/she was supposed to do, very well
+prepared and cooperative.
+
+Satisfactory: Usually did what he/she was supposed to do, minimally
+prepared and cooperative.
+
+Marginal: Sometimes failed to show up, rarely prepared.
+
+Deficient: Often failed to show up, rarely prepared.
+
+Unsatisfactory: Consistently failed to show up, unprepared.
+
+Superficial: Practically no participation.
+
+No Show: No participation at all.
+
+-------------
+Collaboration
+-------------
+
+I attest to having written every line of code and I take full
+responsibility for the origin of all the code I turn in.
+
+In particular if any of the code was originally written in a previous
+semester I will so acknowledge in this document.
